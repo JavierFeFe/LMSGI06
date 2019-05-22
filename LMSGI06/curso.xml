@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<curso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="curso.xsd">
+	<!-- Tabla alumnos -->
+	<alumnos>
+		<alumno cod ="n12344345">
+			<apenom>Alcalde García, Luis</apenom>
+			<direc>Las Manos, 24</direc>
+			<pobla>Lamadrid</pobla>
+			<telef>942756645</telef>
+		</alumno>
+		<alumno cod ="n43483437">
+			<apenom>González Pérez, Olga</apenom>
+			<direc>Miraflor 28 - 3A</direc>
+			<pobla>Torres</pobla>
+			<telef>942564355</telef>
+		</alumno>
+		<alumno cod ="n88234942">
+			<apenom>Fernández Díaz, María</apenom>
+			<direc>Luisa Fernanda 53</direc>
+			<pobla>Miera</pobla>
+			<telef>942346945</telef>
+		</alumno>
+	</alumnos>
+	<!-- Tabla asignaturas -->
+	<asignaturas>
+		<asignatura cod ="a1">
+			<nombre>FH</nombre>
+		</asignatura>
+		<asignatura cod ="a2">
+			<nombre>FOL</nombre>
+		</asignatura>
+		<asignatura cod ="a3">
+			<nombre>ISO</nombre>
+		</asignatura>
+		<asignatura cod ="a4">
+			<nombre>LMSGI</nombre>
+		</asignatura>
+		<asignatura cod ="a5">
+			<nombre>PAR</nombre>
+		</asignatura>
+		<asignatura cod ="a6">
+			<nombre>GBD</nombre>
+		</asignatura>
+	</asignaturas>
+	<!-- Tabla notas -->
+	<notas>
+		<nota alum="n12344345" asig="a1">
+			<calificacion>4.0</calificacion>
+		</nota>
+		<nota alum="n12344345" asig="a2">
+			<calificacion>10.0</calificacion>
+		</nota>
+		<nota alum="n12344345" asig="a3">
+			<calificacion>3.0</calificacion>
+		</nota>
+		<nota alum="n12344345" asig="a4">
+			<calificacion>8.0</calificacion>
+		</nota>
+		<nota alum="n12344345" asig="a5">
+			<calificacion>6.0</calificacion>
+		</nota>
+		<nota alum="n12344345" asig="a6">
+			<calificacion>9.0</calificacion>
+		</nota>
+		<nota alum="n43483437" asig="a1">
+			<calificacion>5.0</calificacion>
+		</nota>
+		<nota alum="n43483437" asig="a2">
+			<calificacion>7.0</calificacion>
+		</nota>
+		<nota alum="n43483437" asig="a4">
+			<calificacion>4.0</calificacion>
+		</nota>
+		<nota alum="n88234942" asig="a1">
+			<calificacion>8.0</calificacion>
+		</nota>
+		<nota alum="n88234942" asig="a2">
+			<calificacion>6.0</calificacion>
+		</nota>
+		<nota alum="n88234942" asig="a3">
+			<calificacion>6.0</calificacion>
+		</nota>
+	</notas>
+</curso>

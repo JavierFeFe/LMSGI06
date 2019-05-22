@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="curso">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="alumnos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="alumno" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="apenom" type="xs:string"/>
+										<xs:element name="direc" type="xs:string"/>
+										<xs:element name="pobla" type="xs:string"/>
+										<xs:element name="telef" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="cod" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="n\d{8}"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>								
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="asignaturas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="asignatura" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nombre" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="cod" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="a\d{1,2}"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="notas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nota" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="calificacion" type="xs:float"/>
+									</xs:sequence>
+									<xs:attribute name="alum" type='xs:token' use="required"/>
+									<xs:attribute name="asig" type="xs:token" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name='alumnoID'>  
+			<xs:selector xpath='alumnos/alumno'/>  
+			<xs:field xpath='@cod'/>
+		</xs:key>  
+		<xs:keyref name='alumnoIDRef' refer='alumnoID'>  
+			<xs:selector xpath='notas/nota'/>  
+			<xs:field xpath='@alum'/>
+		</xs:keyref>
+		<xs:key name='asignaturaID'>  
+			<xs:selector xpath='asignaturas/asignatura'/>  
+			<xs:field xpath='@cod'/>
+		</xs:key>  
+		<xs:keyref name='asignaturaIDRef' refer='asignaturaID'>  
+			<xs:selector xpath='notas/nota'/>  
+			<xs:field xpath='@asig'/>
+		</xs:keyref> 
+	</xs:element>
+</xs:schema>
